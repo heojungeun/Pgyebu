@@ -58,7 +58,11 @@
     - 비밀번호 변경
     - 로그아웃
     - 회원 탈퇴
-    
+
+### 💡 깨달은 점
+- MVVM 패턴
+    - view, viewmodel 에 각자 들어가야할 attribute, method를 구분하는 기준이 생겼다.
+    - api 요청이 많고, 데이터를 저장해야할 때가 많은 앱에는 mvvm 패턴이 개발 및 유지보수에 좋다.
 
 ### 백엔드는 어떻게 했어요??
 **[백엔드팀 레포지토리](https://github.com/charmdong/account-book)**
