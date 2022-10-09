@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="AddViewModel"
+            type="com.example.pgyebu.view.add.AddViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_35"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_add"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:paddingHorizontal="50dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="금액"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edit_add_money"
+                    android:textSize="30dp"
+                    android:hint="100,000"
+                    android:inputType="number"
+                    android:fontFamily="@font/gmarketsansmedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_income"
+                    android:text="수입"
+                    android:textColor="@drawable/text_btn_color_select"
+                    android:textSize="17sp"
+                    android:background="@drawable/bg_btn_income"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"/>
+
+                <Button
+                    android:id="@+id/btn_spending"
+                    android:text="지출"
+                    android:textColor="@drawable/text_btn_color_select"
+                    android:textSize="17sp"
+                    android:background="@drawable/bg_btn_spending"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="메모"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edit_add_desc"
+                    android:textSize="20dp"
+                    android:hint="사용 내용"
+                    android:inputType="text"
+                    android:fontFamily="@font/gmarketsansmedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+<!--                <TextView-->
+<!--                    android:text="분류"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/navi_header_id"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/navi_menu"-->
+<!--                    android:background="@android:color/darker_gray"-->
+<!--                    android:layout_marginVertical="10dp"-->
+<!--                    />-->
+
+                <LinearLayout
+                    android:id="@+id/category_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btn_salary"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="근로소득"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableTop="@drawable/ic_baseline_money_35" />
+
+                        <Button
+                            android:id="@+id/btn_additional"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="부수입"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_note_add_35" />
+
+                        <Button
+                            android:id="@+id/btn_income_etc"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="기타"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_extension_35" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_spend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <Button
+                            android:id="@+id/btn_food"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="식비"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableTop="@drawable/ic_baseline_fastfood_35" />
+
+                        <Button
+                            android:id="@+id/btn_cafe"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="카페"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_local_cafe_35" />
+
+                        <Button
+                            android:id="@+id/btn_shop"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="쇼핑"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_shopping_basket_35" />
+
+                        <Button
+                            android:id="@+id/btn_wine"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="술"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_wine_bar_35" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp">
+
+                        <Button
+                            android:id="@+id/btn_culture"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="문화생활"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_local_play_35" />
+
+                        <Button
+                            android:id="@+id/btn_pet"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="애완"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_pets_35" />
+
+                        <Button
+                            android:id="@+id/btn_edu"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="교육"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_school_35" />
+
+                        <Button
+                            android:id="@+id/btn_traffic"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="교통"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_directions_bus_35" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btn_gas"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="주유"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_local_gas_station_35" />
+
+                        <Button
+                            android:id="@+id/btn_phone"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="통신"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_phone_android_35" />
+
+                        <Button
+                            android:id="@+id/btn_home"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="주거"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_home_work_35" />
+
+                        <Button
+                            android:id="@+id/btn_spending_etc"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="기타"
+                            android:drawablePadding="10dp"
+                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_baseline_category_35" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center">-->
+
+<!--                -->
+
+<!--            </LinearLayout>-->
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="저장"
+            android:textSize="17sp"
+            android:textColor="@android:color/white"
+            android:onClick="@{()->AddViewModel.onSaveButtonClick()}"
+            />
+
+    </LinearLayout>
+
+</layout>

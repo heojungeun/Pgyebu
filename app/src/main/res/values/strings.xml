@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">P계부</string>
+    <string name="date_format">%d/%d/%d</string>
+    <string name="displayOption_AMOUNT">AMOUNT</string>
+    <string name="displayOption_MONTH">MONTH_BALANCE</string>
+    <string name="displayOption_TOTAL">TOTAL_BALANCE</string>
+</resources>
